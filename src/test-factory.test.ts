@@ -1,7 +1,7 @@
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import generateTypes from '@basketry/typescript';
-import { TestFactory } from './test-factory';
+import { generateTests } from './';
 
 const pkg = require('../package.json');
 const withVersion = `${pkg.name}@${pkg.version}`;
@@ -10,12 +10,12 @@ const withoutVersion = `${pkg.name}@{{version}}`;
 describe('InterfaceFactory', () => {
   it('recreates a valid snapshot', () => {
     // ARRANGE
-    const service = require('basketry/lib/example-ir.json');
+    const service = require('./snapshot/service.json');
 
     // ACT
     const snapshotFiles = [
       ...generateTypes(service),
-      ...new TestFactory(service).build(),
+      ...generateTests(service, { typescriptTests: { seed: 123456789 } }),
     ];
 
     // ASSERT

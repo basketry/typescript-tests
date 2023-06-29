@@ -1,0 +1,1481 @@
+{
+  "kind": "Service",
+  "basketry": "1.1-rc",
+  "sourcePath": "service.json",
+  "title": {
+    "value": "UserService",
+    "loc": "4;14;28;49;63"
+  },
+  "majorVersion": {
+    "value": 1,
+    "loc": "5;16;23;80;87"
+  },
+  "interfaces": [
+    {
+      "kind": "Interface",
+      "name": {
+        "value": "user"
+      },
+      "methods": [
+        {
+          "kind": "Method",
+          "name": {
+            "value": "createUser",
+            "loc": "27;24;36;731;743"
+          },
+          "security": [],
+          "parameters": [
+            {
+              "kind": "Parameter",
+              "name": {
+                "value": "user",
+                "loc": "29;40;46;825;831"
+              },
+              "description": {
+                "value": "The new user",
+                "loc": "31;26;40;883;897"
+              },
+              "typeName": {
+                "value": "newUser",
+                "loc": "310;7;16;9941;9950"
+              },
+              "isPrimitive": false,
+              "isArray": false,
+              "rules": [
+                {
+                  "kind": "ValidationRule",
+                  "id": "required"
+                }
+              ],
+              "loc": "30;24;38;10;856;1086"
+            }
+          ],
+          "description": {
+            "value": "Creates a user",
+            "loc": "28;24;40;768;784"
+          },
+          "returnType": {
+            "kind": "ReturnType",
+            "typeName": {
+              "value": "userResponse"
+            },
+            "isPrimitive": false,
+            "isArray": false,
+            "rules": [],
+            "loc": "137;23;149;14;3618;4114"
+          },
+          "loc": "26;7;42;8;698;1187",
+          "meta": [
+            {
+              "key": {
+                "value": "codegen-request-body-name",
+                "loc": "29;9;38;794;823"
+              },
+              "value": {
+                "value": "user",
+                "loc": "29;40;46;825;831"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "Method",
+          "name": {
+            "value": "getUser",
+            "loc": "57;24;33;1490;1499"
+          },
+          "security": [],
+          "parameters": [
+            {
+              "kind": "Parameter",
+              "name": {
+                "value": "userId",
+                "loc": "47;19;27;1270;1278"
+              },
+              "description": {
+                "value": "A user ID",
+                "loc": "48;26;37;1305;1316"
+              },
+              "typeName": {
+                "value": "string",
+                "loc": "52;21;29;1412;1420"
+              },
+              "isPrimitive": true,
+              "isArray": false,
+              "rules": [
+                {
+                  "kind": "ValidationRule",
+                  "id": "required"
+                }
+              ],
+              "loc": "46;9;54;10;1250;1442"
+            }
+          ],
+          "description": {
+            "value": "Gets a user",
+            "loc": "58;24;37;1524;1537"
+          },
+          "returnType": {
+            "kind": "ReturnType",
+            "typeName": {
+              "value": "userResponse"
+            },
+            "isPrimitive": false,
+            "isArray": false,
+            "rules": [],
+            "loc": "137;23;149;14;3618;4114"
+          },
+          "loc": "56;7;62;8;1458;1638"
+        },
+        {
+          "kind": "Method",
+          "name": {
+            "value": "getUsers",
+            "loc": "14;24;34;287;297"
+          },
+          "security": [],
+          "parameters": [
+            {
+              "kind": "Parameter",
+              "name": {
+                "value": "first",
+                "loc": "92;17;24;2422;2429"
+              },
+              "description": {
+                "value": "The number of items to return after the supplied cursor, or from the start of the set if no cursor is supplied.",
+                "loc": "93;24;137;2454;2567"
+              },
+              "typeName": {
+                "value": "integer",
+                "loc": "97;19;28;2657;2666"
+              },
+              "isPrimitive": true,
+              "isArray": false,
+              "rules": [
+                {
+                  "kind": "ValidationRule",
+                  "id": "number-gte",
+                  "value": {
+                    "value": 0,
+                    "loc": "98;22;23;2689;2690"
+                  },
+                  "loc": "98;11;23;2678;2690"
+                },
+                {
+                  "kind": "ValidationRule",
+                  "id": "number-lte",
+                  "value": {
+                    "value": 100,
+                    "loc": "99;22;25;2713;2716"
+                  },
+                  "loc": "99;11;25;2702;2716"
+                }
+              ],
+              "loc": "91;16;101;8;2404;2734"
+            },
+            {
+              "kind": "Parameter",
+              "name": {
+                "value": "after",
+                "loc": "103;17;24;2769;2776"
+              },
+              "description": {
+                "value": "A cursor",
+                "loc": "104;24;34;2801;2811"
+              },
+              "typeName": {
+                "value": "string",
+                "loc": "108;19;27;2901;2909"
+              },
+              "isPrimitive": true,
+              "isArray": false,
+              "rules": [],
+              "loc": "102;16;110;8;2751;2927"
+            },
+            {
+              "kind": "Parameter",
+              "name": {
+                "value": "last",
+                "loc": "112;17;23;2961;2967"
+              },
+              "description": {
+                "value": "The number of items to return before the supplied cursor, or from the end of the set if no cursor is supplied.",
+                "loc": "113;24;136;2992;3104"
+              },
+              "typeName": {
+                "value": "integer",
+                "loc": "117;19;28;3194;3203"
+              },
+              "isPrimitive": true,
+              "isArray": false,
+              "rules": [
+                {
+                  "kind": "ValidationRule",
+                  "id": "number-gte",
+                  "value": {
+                    "value": 0,
+                    "loc": "118;22;23;3226;3227"
+                  },
+                  "loc": "118;11;23;3215;3227"
+                },
+                {
+                  "kind": "ValidationRule",
+                  "id": "number-lte",
+                  "value": {
+                    "value": 100,
+                    "loc": "119;22;25;3250;3253"
+                  },
+                  "loc": "119;11;25;3239;3253"
+                }
+              ],
+              "loc": "111;15;121;8;2943;3271"
+            },
+            {
+              "kind": "Parameter",
+              "name": {
+                "value": "before",
+                "loc": "123;17;25;3307;3315"
+              },
+              "description": {
+                "value": "A cursor",
+                "loc": "124;24;34;3340;3350"
+              },
+              "typeName": {
+                "value": "string",
+                "loc": "128;19;27;3440;3448"
+              },
+              "isPrimitive": true,
+              "isArray": false,
+              "rules": [],
+              "loc": "122;17;130;8;3289;3466"
+            }
+          ],
+          "description": {
+            "value": "Gets users",
+            "loc": "15;24;36;322;334"
+          },
+          "returnType": {
+            "kind": "ReturnType",
+            "typeName": {
+              "value": "usersResponse"
+            },
+            "isPrimitive": false,
+            "isArray": false,
+            "rules": [],
+            "loc": "157;23;174;14;4272;5023"
+          },
+          "loc": "13;7;25;8;255;690"
+        },
+        {
+          "kind": "Method",
+          "name": {
+            "value": "removeUser",
+            "loc": "81;24;36;2185;2197"
+          },
+          "security": [],
+          "parameters": [
+            {
+              "kind": "Parameter",
+              "name": {
+                "value": "userId",
+                "loc": "47;19;27;1270;1278"
+              },
+              "description": {
+                "value": "A user ID",
+                "loc": "48;26;37;1305;1316"
+              },
+              "typeName": {
+                "value": "string",
+                "loc": "52;21;29;1412;1420"
+              },
+              "isPrimitive": true,
+              "isArray": false,
+              "rules": [
+                {
+                  "kind": "ValidationRule",
+                  "id": "required"
+                }
+              ],
+              "loc": "46;9;54;10;1250;1442"
+            }
+          ],
+          "description": {
+            "value": "Removes a user",
+            "loc": "82;24;40;2222;2238"
+          },
+          "returnType": {
+            "kind": "ReturnType",
+            "typeName": {
+              "value": "userResponse"
+            },
+            "isPrimitive": false,
+            "isArray": false,
+            "rules": [],
+            "loc": "137;23;149;14;3618;4114"
+          },
+          "loc": "80;7;86;8;2150;2339"
+        },
+        {
+          "kind": "Method",
+          "name": {
+            "value": "updateUser",
+            "loc": "64;24;36;1680;1692"
+          },
+          "security": [],
+          "parameters": [
+            {
+              "kind": "Parameter",
+              "name": {
+                "value": "user",
+                "loc": "66;40;46;1774;1780"
+              },
+              "description": {
+                "value": "The user update",
+                "loc": "68;26;43;1832;1849"
+              },
+              "typeName": {
+                "value": "userUpdate",
+                "loc": "288;7;19;9236;9248"
+              },
+              "isPrimitive": false,
+              "isArray": false,
+              "rules": [
+                {
+                  "kind": "ValidationRule",
+                  "id": "required"
+                }
+              ],
+              "loc": "67;24;75;10;1805;2041"
+            },
+            {
+              "kind": "Parameter",
+              "name": {
+                "value": "userId",
+                "loc": "47;19;27;1270;1278"
+              },
+              "description": {
+                "value": "A user ID",
+                "loc": "48;26;37;1305;1316"
+              },
+              "typeName": {
+                "value": "string",
+                "loc": "52;21;29;1412;1420"
+              },
+              "isPrimitive": true,
+              "isArray": false,
+              "rules": [
+                {
+                  "kind": "ValidationRule",
+                  "id": "required"
+                }
+              ],
+              "loc": "46;9;54;10;1250;1442"
+            }
+          ],
+          "description": {
+            "value": "Updates a user",
+            "loc": "65;24;40;1717;1733"
+          },
+          "returnType": {
+            "kind": "ReturnType",
+            "typeName": {
+              "value": "userResponse"
+            },
+            "isPrimitive": false,
+            "isArray": false,
+            "rules": [],
+            "loc": "137;23;149;14;3618;4114"
+          },
+          "loc": "63;7;79;8;1646;2142",
+          "meta": [
+            {
+              "key": {
+                "value": "codegen-request-body-name",
+                "loc": "66;9;38;1743;1772"
+              },
+              "value": {
+                "value": "user",
+                "loc": "66;40;46;1774;1780"
+              }
+            }
+          ]
+        }
+      ],
+      "protocols": {
+        "http": [
+          {
+            "kind": "HttpPath",
+            "path": {
+              "value": "/users",
+              "loc": "12;5;13;237;245"
+            },
+            "methods": [
+              {
+                "kind": "HttpMethod",
+                "name": {
+                  "value": "getUsers",
+                  "loc": "14;24;34;287;297"
+                },
+                "verb": {
+                  "value": "get",
+                  "loc": "13;7;12;255;260"
+                },
+                "parameters": [
+                  {
+                    "kind": "HttpParameter",
+                    "name": {
+                      "value": "first",
+                      "loc": "92;17;24;2422;2429"
+                    },
+                    "in": {
+                      "value": "query",
+                      "loc": "94;15;22;2583;2590"
+                    },
+                    "loc": "91;16;101;8;2404;2734"
+                  },
+                  {
+                    "kind": "HttpParameter",
+                    "name": {
+                      "value": "after",
+                      "loc": "103;17;24;2769;2776"
+                    },
+                    "in": {
+                      "value": "query",
+                      "loc": "105;15;22;2827;2834"
+                    },
+                    "loc": "102;16;110;8;2751;2927"
+                  },
+                  {
+                    "kind": "HttpParameter",
+                    "name": {
+                      "value": "last",
+                      "loc": "112;17;23;2961;2967"
+                    },
+                    "in": {
+                      "value": "query",
+                      "loc": "114;15;22;3120;3127"
+                    },
+                    "loc": "111;15;121;8;2943;3271"
+                  },
+                  {
+                    "kind": "HttpParameter",
+                    "name": {
+                      "value": "before",
+                      "loc": "123;17;25;3307;3315"
+                    },
+                    "in": {
+                      "value": "query",
+                      "loc": "125;15;22;3366;3373"
+                    },
+                    "loc": "122;17;130;8;3289;3466"
+                  }
+                ],
+                "successCode": {
+                  "value": 200,
+                  "loc": "23;11;16;623;628"
+                },
+                "loc": "13;7;25;8;255;690"
+              },
+              {
+                "kind": "HttpMethod",
+                "name": {
+                  "value": "createUser",
+                  "loc": "27;24;36;731;743"
+                },
+                "verb": {
+                  "value": "post",
+                  "loc": "26;7;13;698;704"
+                },
+                "parameters": [
+                  {
+                    "kind": "HttpParameter",
+                    "name": {
+                      "value": "user",
+                      "loc": "29;40;46;825;831"
+                    },
+                    "in": {
+                      "value": "body"
+                    },
+                    "loc": "30;24;38;10;856;1086"
+                  }
+                ],
+                "successCode": {
+                  "value": 201,
+                  "loc": "40;11;16;1121;1126"
+                },
+                "loc": "26;7;42;8;698;1187"
+              }
+            ],
+            "loc": "12;5;43;6;237;1193"
+          },
+          {
+            "kind": "HttpPath",
+            "path": {
+              "value": "/users/{userId}",
+              "loc": "44;5;22;1199;1216"
+            },
+            "methods": [
+              {
+                "kind": "HttpMethod",
+                "name": {
+                  "value": "getUser",
+                  "loc": "57;24;33;1490;1499"
+                },
+                "verb": {
+                  "value": "get",
+                  "loc": "56;7;12;1458;1463"
+                },
+                "parameters": [
+                  {
+                    "kind": "HttpParameter",
+                    "name": {
+                      "value": "userId",
+                      "loc": "47;19;27;1270;1278"
+                    },
+                    "in": {
+                      "value": "path",
+                      "loc": "49;17;23;1334;1340"
+                    },
+                    "loc": "46;9;54;10;1250;1442"
+                  }
+                ],
+                "successCode": {
+                  "value": 200,
+                  "loc": "60;11;16;1572;1577"
+                },
+                "loc": "56;7;62;8;1458;1638"
+              },
+              {
+                "kind": "HttpMethod",
+                "name": {
+                  "value": "updateUser",
+                  "loc": "64;24;36;1680;1692"
+                },
+                "verb": {
+                  "value": "patch",
+                  "loc": "63;7;14;1646;1653"
+                },
+                "parameters": [
+                  {
+                    "kind": "HttpParameter",
+                    "name": {
+                      "value": "user",
+                      "loc": "66;40;46;1774;1780"
+                    },
+                    "in": {
+                      "value": "body"
+                    },
+                    "loc": "67;24;75;10;1805;2041"
+                  },
+                  {
+                    "kind": "HttpParameter",
+                    "name": {
+                      "value": "userId",
+                      "loc": "47;19;27;1270;1278"
+                    },
+                    "in": {
+                      "value": "path",
+                      "loc": "49;17;23;1334;1340"
+                    },
+                    "loc": "46;9;54;10;1250;1442"
+                  }
+                ],
+                "successCode": {
+                  "value": 200,
+                  "loc": "77;11;16;2076;2081"
+                },
+                "loc": "63;7;79;8;1646;2142"
+              },
+              {
+                "kind": "HttpMethod",
+                "name": {
+                  "value": "removeUser",
+                  "loc": "81;24;36;2185;2197"
+                },
+                "verb": {
+                  "value": "delete",
+                  "loc": "80;7;15;2150;2158"
+                },
+                "parameters": [
+                  {
+                    "kind": "HttpParameter",
+                    "name": {
+                      "value": "userId",
+                      "loc": "47;19;27;1270;1278"
+                    },
+                    "in": {
+                      "value": "path",
+                      "loc": "49;17;23;1334;1340"
+                    },
+                    "loc": "46;9;54;10;1250;1442"
+                  }
+                ],
+                "successCode": {
+                  "value": 200,
+                  "loc": "84;11;16;2273;2278"
+                },
+                "loc": "80;7;86;8;2150;2339"
+              }
+            ],
+            "loc": "44;5;87;6;1199;2345"
+          }
+        ]
+      }
+    }
+  ],
+  "types": [
+    {
+      "kind": "Type",
+      "name": {
+        "value": "error",
+        "loc": "191;7;14;5390;5397"
+      },
+      "description": {
+        "value": "A standard error",
+        "loc": "193;24;42;5450;5468"
+      },
+      "properties": [
+        {
+          "kind": "Property",
+          "name": {
+            "value": "id",
+            "loc": "196;11;15;5544;5548"
+          },
+          "description": {
+            "value": "A unique identifier for this particular occurrence of the problem.",
+            "loc": "197;28;96;5579;5647"
+          },
+          "typeName": {
+            "value": "string",
+            "loc": "198;21;29;5669;5677"
+          },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [],
+          "loc": "196;17;199;12;5550;5689"
+        },
+        {
+          "kind": "Property",
+          "name": {
+            "value": "code",
+            "loc": "200;11;17;5701;5707"
+          },
+          "description": {
+            "value": "An application-specific error code, expressed as a string value",
+            "loc": "181;24;89;5122;5187"
+          },
+          "typeName": {
+            "value": "errorCode",
+            "loc": "180;7;18;5084;5095"
+          },
+          "isPrimitive": false,
+          "isArray": false,
+          "rules": [
+            {
+              "kind": "ValidationRule",
+              "id": "required"
+            },
+            {
+              "kind": "ValidationRule",
+              "id": "string-enum",
+              "values": [
+                {
+                  "value": "BAD_PARAMETER",
+                  "loc": "184;11;26;5243;5258"
+                },
+                {
+                  "value": "BAD_REQUEST",
+                  "loc": "185;11;24;5270;5283"
+                },
+                {
+                  "value": "FORBIDDEN",
+                  "loc": "186;11;22;5295;5306"
+                },
+                {
+                  "value": "NOT_FOUND",
+                  "loc": "187;11;22;5318;5329"
+                },
+                {
+                  "value": "INTERNAL_SERVER_ERROR",
+                  "loc": "188;11;34;5341;5364"
+                }
+              ],
+              "loc": "183;9;189;10;5223;5374"
+            }
+          ],
+          "loc": "180;20;190;8;5097;5382"
+        },
+        {
+          "kind": "Property",
+          "name": {
+            "value": "status",
+            "loc": "201;11;19;5765;5773"
+          },
+          "description": {
+            "value": "The HTTP status code applicable to this problem.",
+            "loc": "202;28;78;5804;5854"
+          },
+          "typeName": {
+            "value": "integer",
+            "loc": "203;21;30;5876;5885"
+          },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [
+            {
+              "kind": "ValidationRule",
+              "id": "required"
+            }
+          ],
+          "loc": "201;21;204;12;5775;5897"
+        },
+        {
+          "kind": "Property",
+          "name": {
+            "value": "title",
+            "loc": "205;11;18;5909;5916"
+          },
+          "description": {
+            "value": "A short, human-readable summary of the problem that SHOULD NOT change from occurrence to occurrence of the problem, except for purposes of localization.",
+            "loc": "206;28;182;5947;6101"
+          },
+          "typeName": {
+            "value": "string",
+            "loc": "207;21;29;6123;6131"
+          },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [],
+          "loc": "205;20;208;12;5918;6143"
+        },
+        {
+          "kind": "Property",
+          "name": {
+            "value": "detail",
+            "loc": "209;11;19;6155;6163"
+          },
+          "description": {
+            "value": "a human-readable explanation specific to this occurrence of the problem. Like `title`, this field’s value can be localized.",
+            "loc": "210;28;153;6194;6319"
+          },
+          "typeName": {
+            "value": "string",
+            "loc": "211;21;29;6341;6349"
+          },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [],
+          "loc": "209;21;212;12;6165;6361"
+        },
+        {
+          "kind": "Property",
+          "name": {
+            "value": "pointer",
+            "loc": "213;11;20;6373;6382"
+          },
+          "description": {
+            "value": "A JSON Pointer (RFC6901) to the associated entity in the request document (e.g. `/data` for a primary data object, or `/data/attributes/title` for a specific attribute).",
+            "loc": "214;28;199;6413;6584"
+          },
+          "typeName": {
+            "value": "string",
+            "loc": "215;21;29;6606;6614"
+          },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [],
+          "loc": "213;22;216;12;6384;6626"
+        },
+        {
+          "kind": "Property",
+          "name": {
+            "value": "parameter",
+            "loc": "217;11;22;6638;6649"
+          },
+          "description": {
+            "value": "A string indicating which method parameter caused the error.",
+            "loc": "218;28;90;6680;6742"
+          },
+          "typeName": {
+            "value": "string",
+            "loc": "219;21;29;6764;6772"
+          },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [],
+          "loc": "217;24;220;12;6651;6784"
+        }
+      ],
+      "rules": [],
+      "loc": "191;7;222;8;5390;6802"
+    },
+    {
+      "kind": "Type",
+      "name": {
+        "value": "newUser",
+        "loc": "310;7;16;9941;9950"
+      },
+      "description": {
+        "value": "A user",
+        "loc": "312;24;32;10003;10011"
+      },
+      "properties": [
+        {
+          "kind": "Property",
+          "name": {
+            "value": "avatarUri",
+            "loc": "315;11;22;10099;10110"
+          },
+          "description": {
+            "value": "Absolute URI to an image",
+            "loc": "317;28;54;10171;10197"
+          },
+          "typeName": {
+            "value": "string",
+            "loc": "316;21;29;10134;10142"
+          },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [],
+          "loc": "315;24;318;12;10112;10209"
+        },
+        {
+          "kind": "Property",
+          "name": {
+            "value": "preferredFirstName",
+            "loc": "319;11;31;10221;10241"
+          },
+          "description": {
+            "value": "The name or nickname the user prefers which may differ from their given legal first name",
+            "loc": "321;28;118;10302;10392"
+          },
+          "typeName": {
+            "value": "string",
+            "loc": "320;21;29;10265;10273"
+          },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [],
+          "loc": "319;33;322;12;10243;10404"
+        },
+        {
+          "kind": "Property",
+          "name": {
+            "value": "legalFirstName",
+            "loc": "323;11;27;10416;10432"
+          },
+          "description": {
+            "value": "The user's given legal first name",
+            "loc": "325;28;63;10493;10528"
+          },
+          "typeName": {
+            "value": "string",
+            "loc": "324;21;29;10456;10464"
+          },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [
+            {
+              "kind": "ValidationRule",
+              "id": "required"
+            }
+          ],
+          "loc": "323;29;326;12;10434;10540"
+        },
+        {
+          "kind": "Property",
+          "name": {
+            "value": "lastName",
+            "loc": "327;11;21;10552;10562"
+          },
+          "description": {
+            "value": "The user's given legal last name",
+            "loc": "329;28;62;10623;10657"
+          },
+          "typeName": {
+            "value": "string",
+            "loc": "328;21;29;10586;10594"
+          },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [
+            {
+              "kind": "ValidationRule",
+              "id": "required"
+            }
+          ],
+          "loc": "327;23;330;12;10564;10669"
+        }
+      ],
+      "rules": [],
+      "loc": "310;7;332;8;9941;10687"
+    },
+    {
+      "kind": "Type",
+      "name": {
+        "value": "pageInfo",
+        "loc": "223;7;17;6810;6820"
+      },
+      "description": {
+        "value": "Implements the [GraphQL Cursor Connection Specification](https://relay.dev/graphql/connections.htm#sec-undefined.PageInfo) Page Info obejct.",
+        "loc": "224;24;166;6847;6989"
+      },
+      "properties": [
+        {
+          "kind": "Property",
+          "name": {
+            "value": "hasPreviousPage",
+            "loc": "228;11;28;7107;7124"
+          },
+          "description": {
+            "value": "Indicates whether more items exist prior to the set defined by the client's arguments.",
+            "loc": "229;28;116;7155;7243"
+          },
+          "typeName": {
+            "value": "boolean",
+            "loc": "230;21;30;7265;7274"
+          },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [
+            {
+              "kind": "ValidationRule",
+              "id": "required"
+            }
+          ],
+          "loc": "228;30;231;12;7126;7286"
+        },
+        {
+          "kind": "Property",
+          "name": {
+            "value": "hasNextPage",
+            "loc": "232;11;24;7298;7311"
+          },
+          "description": {
+            "value": "Indicates whether more items exist following the set defined by the client's arguments.",
+            "loc": "233;28;117;7342;7431"
+          },
+          "typeName": {
+            "value": "boolean",
+            "loc": "234;21;30;7453;7462"
+          },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [
+            {
+              "kind": "ValidationRule",
+              "id": "required"
+            }
+          ],
+          "loc": "232;26;235;12;7313;7474"
+        },
+        {
+          "kind": "Property",
+          "name": {
+            "value": "startCursor",
+            "loc": "236;11;24;7486;7499"
+          },
+          "description": {
+            "value": "Cursor corresponding to the first item in the resulting set if any items were returned; otherwise, undefined",
+            "loc": "237;28;138;7530;7640"
+          },
+          "typeName": {
+            "value": "string",
+            "loc": "238;21;29;7662;7670"
+          },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [],
+          "loc": "236;26;239;12;7501;7682"
+        },
+        {
+          "kind": "Property",
+          "name": {
+            "value": "endCursor",
+            "loc": "240;11;22;7694;7705"
+          },
+          "description": {
+            "value": "Cursor corresponding to the last item in the resulting set if any items were returned; otherwise, undefined",
+            "loc": "241;28;137;7736;7845"
+          },
+          "typeName": {
+            "value": "string",
+            "loc": "242;21;29;7867;7875"
+          },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [],
+          "loc": "240;24;243;12;7707;7887"
+        }
+      ],
+      "rules": [],
+      "loc": "223;7;245;8;6810;7905"
+    },
+    {
+      "kind": "Type",
+      "name": {
+        "value": "user",
+        "loc": "246;7;13;7913;7919"
+      },
+      "description": {
+        "value": "A user",
+        "loc": "248;24;32;7972;7980"
+      },
+      "properties": [
+        {
+          "kind": "Property",
+          "name": {
+            "value": "id",
+            "loc": "258;11;15;8204;8208"
+          },
+          "description": {
+            "value": "Unique, non-sequential identifier for this user",
+            "loc": "260;28;77;8269;8318"
+          },
+          "typeName": {
+            "value": "string",
+            "loc": "259;21;29;8232;8240"
+          },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [
+            {
+              "kind": "ValidationRule",
+              "id": "required"
+            }
+          ],
+          "loc": "258;17;261;12;8210;8330"
+        },
+        {
+          "kind": "Property",
+          "name": {
+            "value": "avatarUri",
+            "loc": "262;11;22;8342;8353"
+          },
+          "description": {
+            "value": "Absolute URI to an image",
+            "loc": "264;28;54;8414;8440"
+          },
+          "typeName": {
+            "value": "string",
+            "loc": "263;21;29;8377;8385"
+          },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [],
+          "loc": "262;24;265;12;8355;8452"
+        },
+        {
+          "kind": "Property",
+          "name": {
+            "value": "preferredFirstName",
+            "loc": "266;11;31;8464;8484"
+          },
+          "description": {
+            "value": "The name or nickname the user prefers which may differ from their given legal first name",
+            "loc": "268;28;118;8545;8635"
+          },
+          "typeName": {
+            "value": "string",
+            "loc": "267;21;29;8508;8516"
+          },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [
+            {
+              "kind": "ValidationRule",
+              "id": "required"
+            }
+          ],
+          "loc": "266;33;269;12;8486;8647"
+        },
+        {
+          "kind": "Property",
+          "name": {
+            "value": "legalFirstName",
+            "loc": "270;11;27;8659;8675"
+          },
+          "description": {
+            "value": "The user's given legal first name",
+            "loc": "272;28;63;8736;8771"
+          },
+          "typeName": {
+            "value": "string",
+            "loc": "271;21;29;8699;8707"
+          },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [
+            {
+              "kind": "ValidationRule",
+              "id": "required"
+            }
+          ],
+          "loc": "270;29;273;12;8677;8783"
+        },
+        {
+          "kind": "Property",
+          "name": {
+            "value": "lastName",
+            "loc": "274;11;21;8795;8805"
+          },
+          "description": {
+            "value": "The user's given legal last name",
+            "loc": "276;28;62;8866;8900"
+          },
+          "typeName": {
+            "value": "string",
+            "loc": "275;21;29;8829;8837"
+          },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [
+            {
+              "kind": "ValidationRule",
+              "id": "required"
+            }
+          ],
+          "loc": "274;23;277;12;8807;8912"
+        },
+        {
+          "kind": "Property",
+          "name": {
+            "value": "preferredFullName",
+            "loc": "278;11;30;8924;8943"
+          },
+          "description": {
+            "value": "The combined preferred first name and last name",
+            "loc": "280;28;77;9004;9053"
+          },
+          "typeName": {
+            "value": "string",
+            "loc": "279;21;29;8967;8975"
+          },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [
+            {
+              "kind": "ValidationRule",
+              "id": "required"
+            }
+          ],
+          "loc": "278;32;281;12;8945;9065"
+        },
+        {
+          "kind": "Property",
+          "name": {
+            "value": "legalFullName",
+            "loc": "282;11;26;9077;9092"
+          },
+          "description": {
+            "value": "The combined legal first name and last name",
+            "loc": "284;28;73;9153;9198"
+          },
+          "typeName": {
+            "value": "string",
+            "loc": "283;21;29;9116;9124"
+          },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [
+            {
+              "kind": "ValidationRule",
+              "id": "required"
+            }
+          ],
+          "loc": "282;28;285;12;9094;9210"
+        }
+      ],
+      "rules": [],
+      "loc": "246;7;287;8;7913;9228"
+    },
+    {
+      "kind": "Type",
+      "name": {
+        "value": "userResponse"
+      },
+      "properties": [
+        {
+          "kind": "Property",
+          "name": {
+            "value": "data",
+            "loc": "142;17;23;3807;3813"
+          },
+          "description": {
+            "value": "A user",
+            "loc": "248;24;32;7972;7980"
+          },
+          "typeName": {
+            "value": "user",
+            "loc": "246;7;13;7913;7919"
+          },
+          "isPrimitive": false,
+          "isArray": false,
+          "rules": [],
+          "loc": "246;15;287;8;7921;9228"
+        },
+        {
+          "kind": "Property",
+          "name": {
+            "value": "errors",
+            "loc": "143;17;25;3872;3880"
+          },
+          "description": {
+            "value": "Any errors produced during method execution",
+            "loc": "145;34;79;3952;3997"
+          },
+          "typeName": {
+            "value": "error",
+            "loc": "191;7;14;5390;5397"
+          },
+          "isPrimitive": false,
+          "isArray": true,
+          "rules": [
+            {
+              "kind": "ValidationRule",
+              "id": "required"
+            }
+          ],
+          "loc": "143;27;147;18;3882;4084"
+        }
+      ],
+      "description": {
+        "value": "A response that contains a single user",
+        "loc": "139;30;70;3681;3721"
+      },
+      "rules": [],
+      "loc": "137;23;149;14;3618;4114"
+    },
+    {
+      "kind": "Type",
+      "name": {
+        "value": "usersResponse"
+      },
+      "properties": [
+        {
+          "kind": "Property",
+          "name": {
+            "value": "data",
+            "loc": "162;17;23;4481;4487"
+          },
+          "description": {
+            "value": "Any errors produced during method execution",
+            "loc": "164;34;79;4559;4604"
+          },
+          "typeName": {
+            "value": "user",
+            "loc": "246;7;13;7913;7919"
+          },
+          "isPrimitive": false,
+          "isArray": true,
+          "rules": [
+            {
+              "kind": "ValidationRule",
+              "id": "required"
+            }
+          ],
+          "loc": "162;25;166;18;4489;4690"
+        },
+        {
+          "kind": "Property",
+          "name": {
+            "value": "errors",
+            "loc": "167;17;25;4708;4716"
+          },
+          "description": {
+            "value": "Any errors produced during method execution",
+            "loc": "169;34;79;4788;4833"
+          },
+          "typeName": {
+            "value": "error",
+            "loc": "191;7;14;5390;5397"
+          },
+          "isPrimitive": false,
+          "isArray": true,
+          "rules": [
+            {
+              "kind": "ValidationRule",
+              "id": "required"
+            }
+          ],
+          "loc": "167;27;171;18;4718;4920"
+        },
+        {
+          "kind": "Property",
+          "name": {
+            "value": "pageInfo",
+            "loc": "172;17;27;4938;4948"
+          },
+          "description": {
+            "value": "Implements the [GraphQL Cursor Connection Specification](https://relay.dev/graphql/connections.htm#sec-undefined.PageInfo) Page Info obejct.",
+            "loc": "224;24;166;6847;6989"
+          },
+          "typeName": {
+            "value": "pageInfo",
+            "loc": "223;7;17;6810;6820"
+          },
+          "isPrimitive": false,
+          "isArray": false,
+          "rules": [
+            {
+              "kind": "ValidationRule",
+              "id": "required"
+            }
+          ],
+          "loc": "223;19;245;8;6822;7905"
+        }
+      ],
+      "description": {
+        "value": "A response that contains a single user",
+        "loc": "159;30;70;4335;4375"
+      },
+      "rules": [],
+      "loc": "157;23;174;14;4272;5023"
+    },
+    {
+      "kind": "Type",
+      "name": {
+        "value": "userUpdate",
+        "loc": "288;7;19;9236;9248"
+      },
+      "description": {
+        "value": "A user",
+        "loc": "290;24;32;9301;9309"
+      },
+      "properties": [
+        {
+          "kind": "Property",
+          "name": {
+            "value": "avatarUri",
+            "loc": "292;11;22;9345;9356"
+          },
+          "description": {
+            "value": "Absolute URI to an image",
+            "loc": "294;28;54;9417;9443"
+          },
+          "typeName": {
+            "value": "string",
+            "loc": "293;21;29;9380;9388"
+          },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [],
+          "loc": "292;24;295;12;9358;9455"
+        },
+        {
+          "kind": "Property",
+          "name": {
+            "value": "preferredFirstName",
+            "loc": "296;11;31;9467;9487"
+          },
+          "description": {
+            "value": "The name or nickname the user prefers which may differ from their given legal first name",
+            "loc": "298;28;118;9548;9638"
+          },
+          "typeName": {
+            "value": "string",
+            "loc": "297;21;29;9511;9519"
+          },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [],
+          "loc": "296;33;299;12;9489;9650"
+        },
+        {
+          "kind": "Property",
+          "name": {
+            "value": "legalFirstName",
+            "loc": "300;11;27;9662;9678"
+          },
+          "description": {
+            "value": "The user's given legal first name",
+            "loc": "302;28;63;9739;9774"
+          },
+          "typeName": {
+            "value": "string",
+            "loc": "301;21;29;9702;9710"
+          },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [],
+          "loc": "300;29;303;12;9680;9786"
+        },
+        {
+          "kind": "Property",
+          "name": {
+            "value": "lastName",
+            "loc": "304;11;21;9798;9808"
+          },
+          "description": {
+            "value": "The user's given legal last name",
+            "loc": "306;28;62;9869;9903"
+          },
+          "typeName": {
+            "value": "string",
+            "loc": "305;21;29;9832;9840"
+          },
+          "isPrimitive": true,
+          "isArray": false,
+          "rules": [],
+          "loc": "304;23;307;12;9810;9915"
+        }
+      ],
+      "rules": [],
+      "loc": "288;7;309;8;9236;9933"
+    }
+  ],
+  "enums": [
+    {
+      "kind": "Enum",
+      "name": {
+        "value": "errorCode",
+        "loc": "180;7;18;5084;5095"
+      },
+      "values": [
+        {
+          "kind": "EnumValue",
+          "content": {
+            "value": "BAD_PARAMETER",
+            "loc": "184;11;26;5243;5258"
+          },
+          "loc": "184;11;26;5243;5258"
+        },
+        {
+          "kind": "EnumValue",
+          "content": {
+            "value": "BAD_REQUEST",
+            "loc": "185;11;24;5270;5283"
+          },
+          "loc": "185;11;24;5270;5283"
+        },
+        {
+          "kind": "EnumValue",
+          "content": {
+            "value": "FORBIDDEN",
+            "loc": "186;11;22;5295;5306"
+          },
+          "loc": "186;11;22;5295;5306"
+        },
+        {
+          "kind": "EnumValue",
+          "content": {
+            "value": "NOT_FOUND",
+            "loc": "187;11;22;5318;5329"
+          },
+          "loc": "187;11;22;5318;5329"
+        },
+        {
+          "kind": "EnumValue",
+          "content": {
+            "value": "INTERNAL_SERVER_ERROR",
+            "loc": "188;11;34;5341;5364"
+          },
+          "loc": "188;11;34;5341;5364"
+        }
+      ],
+      "loc": "183;9;189;10;5223;5374"
+    }
+  ],
+  "unions": [],
+  "loc": "1;1;335;2;0;10699"
+}

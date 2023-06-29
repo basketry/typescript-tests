@@ -7,9 +7,12 @@ const pkg = require('../../package.json');
 const withVersion = `${pkg.name}@${pkg.version}`;
 const withoutVersion = `${pkg.name}@{{version}}`;
 
-const service = require('/Users/stevekonves/wealthvp/rest-api/src/user-service-v1-ir.json');
+const service = require('../snapshot/service.json');
 
-const snapshotFiles = [...generateTypes(service), ...generateTests(service)];
+const snapshotFiles = [
+  ...generateTypes(service),
+  ...generateTests(service, { typescriptTests: { seed: 123456789 } }),
+];
 
 for (const file of snapshotFiles) {
   const path = file.path.slice(0, file.path.length - 1);
