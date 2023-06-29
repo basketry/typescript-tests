@@ -1,7 +1,7 @@
 [![main](https://github.com/basketry/typescript-tests/workflows/build/badge.svg?branch=main&event=push)](https://github.com/basketry/typescript-tests/actions?query=workflow%3Abuild+branch%3Amain+event%3Apush)
 [![main](https://img.shields.io/npm/v/@basketry/typescript-tests)](https://www.npmjs.com/package/@basketry/typescript-tests)
 
-# Cloud Functions for Firebase
+# Typescript Test Harnesses
 
 [Basketry generator](https://github.com/basketry/basketry) for generating test cases for Typescript service implementations. This parser can be coupled with any Basketry parser.
 
