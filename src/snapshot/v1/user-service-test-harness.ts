@@ -13,7 +13,6 @@
  */
 
 import * as types from './types';
-import * as testHelpers from './test-helpers';
 
 export function testUserService(service: types.UserService) {
   describe('UserService', () => {
@@ -22,8 +21,8 @@ export function testUserService(service: types.UserService) {
       beforeEach(() => {
         params = {
           user: {
-            legalFirstName: ' %e',
-            lastName: '1Mn?0',
+            legalFirstName: '}',
+            lastName: '~',
           },
         };
       });
@@ -45,7 +44,7 @@ export function testUserService(service: types.UserService) {
       let params: NonNullable<Parameters<types.UserService['getUser']>[0]>;
       beforeEach(() => {
         params = {
-          userId: 'EvflQTU}',
+          userId: 'ks,BW&X %',
         };
       });
 
@@ -61,7 +60,7 @@ export function testUserService(service: types.UserService) {
         });
 
         it('returns an error when a number', async () => {
-          params.userId = 2836 as any;
+          params.userId = 2142 as any;
           const result = await service.getUser(params);
           expect(result.errors).toEqual(
             expect.arrayContaining([
@@ -71,7 +70,7 @@ export function testUserService(service: types.UserService) {
         });
 
         it('returns an error when a boolean', async () => {
-          params.userId = true as any;
+          params.userId = false as any;
           const result = await service.getUser(params);
           expect(result.errors).toEqual(
             expect.arrayContaining([
@@ -110,7 +109,7 @@ export function testUserService(service: types.UserService) {
         });
 
         it('returns an error when a string', async () => {
-          params.first = '9X>.w=wvn2' as any;
+          params.first = 'ewhZvjLmZd' as any;
           const result = await service.getUsers(params);
           expect(result.errors).toEqual(
             expect.arrayContaining([
@@ -120,7 +119,7 @@ export function testUserService(service: types.UserService) {
         });
 
         it('returns an error when a decimal', async () => {
-          params.first = 70.25434616953135 as any;
+          params.first = 29.000012460164726 as any;
           const result = await service.getUsers(params);
           expect(result.errors).toEqual(
             expect.arrayContaining([
@@ -130,7 +129,7 @@ export function testUserService(service: types.UserService) {
         });
 
         it('returns an error when a boolean', async () => {
-          params.first = true as any;
+          params.first = false as any;
           const result = await service.getUsers(params);
           expect(result.errors).toEqual(
             expect.arrayContaining([
@@ -142,7 +141,7 @@ export function testUserService(service: types.UserService) {
 
       describe('after', () => {
         it('returns an error when a number', async () => {
-          params.after = 4008 as any;
+          params.after = 2695 as any;
           const result = await service.getUsers(params);
           expect(result.errors).toEqual(
             expect.arrayContaining([
@@ -184,7 +183,7 @@ export function testUserService(service: types.UserService) {
         });
 
         it('returns an error when a string', async () => {
-          params.last = 'AVd0ps<E}A' as any;
+          params.last = 'w=wvn2 ij,' as any;
           const result = await service.getUsers(params);
           expect(result.errors).toEqual(
             expect.arrayContaining([
@@ -194,7 +193,7 @@ export function testUserService(service: types.UserService) {
         });
 
         it('returns an error when a decimal', async () => {
-          params.last = 71.50565676856786 as any;
+          params.last = 28.80550092086196 as any;
           const result = await service.getUsers(params);
           expect(result.errors).toEqual(
             expect.arrayContaining([
@@ -204,7 +203,7 @@ export function testUserService(service: types.UserService) {
         });
 
         it('returns an error when a boolean', async () => {
-          params.last = false as any;
+          params.last = true as any;
           const result = await service.getUsers(params);
           expect(result.errors).toEqual(
             expect.arrayContaining([
@@ -216,7 +215,7 @@ export function testUserService(service: types.UserService) {
 
       describe('before', () => {
         it('returns an error when a number', async () => {
-          params.before = 4101 as any;
+          params.before = 2397 as any;
           const result = await service.getUsers(params);
           expect(result.errors).toEqual(
             expect.arrayContaining([
@@ -226,7 +225,7 @@ export function testUserService(service: types.UserService) {
         });
 
         it('returns an error when a boolean', async () => {
-          params.before = false as any;
+          params.before = true as any;
           const result = await service.getUsers(params);
           expect(result.errors).toEqual(
             expect.arrayContaining([
@@ -241,7 +240,7 @@ export function testUserService(service: types.UserService) {
       let params: NonNullable<Parameters<types.UserService['removeUser']>[0]>;
       beforeEach(() => {
         params = {
-          userId: 'KPL,AF',
+          userId: 'k1Mn',
         };
       });
 
@@ -257,7 +256,7 @@ export function testUserService(service: types.UserService) {
         });
 
         it('returns an error when a number', async () => {
-          params.userId = 9443 as any;
+          params.userId = 5843 as any;
           const result = await service.removeUser(params);
           expect(result.errors).toEqual(
             expect.arrayContaining([
@@ -283,7 +282,7 @@ export function testUserService(service: types.UserService) {
       beforeEach(() => {
         params = {
           user: {},
-          userId: ' ;$RqG4z',
+          userId: '04EvflQTU}p',
         };
       });
 
@@ -311,7 +310,7 @@ export function testUserService(service: types.UserService) {
         });
 
         it('returns an error when a number', async () => {
-          params.userId = 2474 as any;
+          params.userId = 4969 as any;
           const result = await service.updateUser(params);
           expect(result.errors).toEqual(
             expect.arrayContaining([
