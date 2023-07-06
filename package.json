@@ -1,6 +1,6 @@
 {
   "name": "@basketry/typescript-tests",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Basketry generator for generating test cases for Typescript service implementations",
   "main": "./lib/index.js",
   "scripts": {
