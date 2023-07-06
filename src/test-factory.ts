@@ -97,8 +97,9 @@ export class TestFactory {
 
     yield this.warning();
     yield '';
-    yield 'import * as types from "./types";';
-    yield 'import * as testHelpers from "./test-helpers";';
+    yield `import * as types from "${
+      this.options?.typescriptTests?.typesImportPath ?? './tests'
+    }";`;
     yield '';
     yield `export function ${camel(
       `test_${buildInterfaceName(int)}`,
