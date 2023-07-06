@@ -62,10 +62,7 @@ export class TestFactory {
   private readonly generate: Factory;
 
   build(): File[] {
-    return [
-      this.buildTestHelpersFile(),
-      ...this.service.interfaces.map((int) => this.buildTestFile(int)),
-    ];
+    return [...this.service.interfaces.map((int) => this.buildTestFile(int))];
   }
 
   private buildTestFile(int: Interface): File {
