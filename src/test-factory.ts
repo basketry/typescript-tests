@@ -95,7 +95,7 @@ export class TestFactory {
     yield this.warning();
     yield '';
     yield `import * as types from "${
-      this.options?.typescriptTests?.typesImportPath ?? './tests'
+      this.options?.typescriptTests?.typesImportPath ?? './types'
     }";`;
     yield '';
     yield `export function ${camel(
