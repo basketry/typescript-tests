@@ -163,6 +163,18 @@ export class TestFactory {
               )},`;
             }
             break;
+          case 'date':
+          case 'date-time':
+            {
+              if (param.isArray) {
+                yield `${camel(param.name.value)}: [${this.generate
+                  .validArray(() => `new Date()`, buildArrayRules(param))
+                  .join(',')}],`;
+              } else {
+                yield `${camel(param.name.value)}: new Date(),`;
+              }
+            }
+            break;
           case 'double':
           case 'float':
           case 'number':
